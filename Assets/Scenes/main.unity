@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.8
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1374,6 +1374,7 @@ GameObject:
   - component: {fileID: 1042834399}
   - component: {fileID: 1042834401}
   - component: {fileID: 1042834400}
+  - component: {fileID: 1042834402}
   m_Layer: 5
   m_Name: StatsMainPanel
   m_TagString: Untagged
@@ -1436,6 +1437,33 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042834398}
+--- !u!114 &1042834402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042834398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266d03c10e6f416479641f2536770bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energieDispo: 5
+  energieMax: 10
+  motivationDispo: 6
+  motivationMax: 10
+  dysphoriaDispo: 7
+  dysphoriaMax: 10
+  workDispo: 8
+  workMax: 10
+  sliderEnergie: {fileID: 1916752459}
+  valueSliderEnergieText: {fileID: 1733130355}
+  sliderMotivation: {fileID: 1190125615}
+  valueSliderMotivationText: {fileID: 740556724}
+  sliderDysphoria: {fileID: 847541089}
+  valueSliderDysphoriaText: {fileID: 239576962}
+  sliderWork: {fileID: 1196588886}
+  valueSliderWorkText: {fileID: 1423429360}
 --- !u!1 &1190125613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,7 +1544,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.8
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1602,7 +1630,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.8
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2454,7 +2482,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.8
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
