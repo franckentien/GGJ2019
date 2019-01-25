@@ -88,10 +88,8 @@ public class ValuesPanel : MonoBehaviour
     public Text valueSliderWorkText;
 
 
-
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+	private void Start ()
     {
         this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
         this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
@@ -105,12 +103,67 @@ public class ValuesPanel : MonoBehaviour
         this.valueSliderWorkText.text = this.workDispo.ToString() + " / " + this.workMax + "\t";
         this.sliderWork.value = (float)this.workDispo / this.workMax;
 
+    }
+
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
+    private void Update()
+    {
+    }
+
+    /// <summary>
+    /// The update energie.
+    /// </summary>
+    /// <param name="amount">
+    /// The amount.
+    /// </param>
+    public void UpdateEnergie(int amount)
+    {
+        this.energieDispo += amount;
+        this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
+        this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+    }
+
+    /// <summary>
+    /// The update motivation.
+    /// </summary>
+    /// <param name="amount">
+    /// The amount.
+    /// </param>
+    public void UpdateMotivation(int amount)
+    {
+        this.motivationDispo += amount;
+        this.valueSliderMotivationText.text = this.motivationDispo.ToString() + " / " + this.motivationMax + "\t";
+        this.sliderMotivation.value = (float)this.motivationDispo / this.motivationMax;
+    }
+
+    /// <summary>
+    /// The update dysphoria.
+    /// </summary>
+    /// <param name="amount">
+    /// The amount.
+    /// </param>
+    public void UpdateDysphoria(int amount)
+    {
+        this.dysphoriaDispo += amount;
+        this.valueSliderDysphoriaText.text = this.dysphoriaDispo.ToString() + " / " + this.dysphoriaMax + "\t";
+        this.sliderDysphoria.value = (float)this.dysphoriaDispo / this.dysphoriaMax;
 
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    /// <summary>
+    /// The update work.
+    /// </summary>
+    /// <param name="amount">
+    /// The amount.
+    /// </param>
+    public void UpdateWork(int amount)
     {
-		
-	}
+        this.workDispo += amount;
+        this.valueSliderWorkText.text = this.workDispo.ToString() + " / " + this.workMax + "\t";
+        this.sliderWork.value = (float)this.workDispo / this.workMax;
+
+    }
+
 }
