@@ -8,6 +8,8 @@ using UnityEngine.UI;
 /// </summary>
 public class ValuesPanel : MonoBehaviour
 {
+    #region Variable
+
     /// <summary>
     /// The energie dispo.
     /// </summary>
@@ -27,7 +29,6 @@ public class ValuesPanel : MonoBehaviour
     /// The motivation max.
     /// </summary>
     public int motivationMax;
-
 
     /// <summary>
     /// The disphoria.
@@ -60,7 +61,11 @@ public class ValuesPanel : MonoBehaviour
     /// The red color.
     /// </summary>
     public Color RedColor;
-    
+
+    #endregion
+
+    #region SliderObject
+
     /// <summary>
     /// The slider energie.
     /// </summary>
@@ -71,7 +76,7 @@ public class ValuesPanel : MonoBehaviour
     /// </summary>
     public Text valueSliderEnergieText;
 
-    public Image EnergieImage;
+    public Image EnergieSliderImage;
 
     /// <summary>
     /// The slider motivation.
@@ -103,9 +108,15 @@ public class ValuesPanel : MonoBehaviour
     /// </summary>
     public Text valueSliderWorkText;
 
+    #endregion
+
+    /// <summary>
+    /// The hover script.
+    /// </summary>
+    public HoverScript HoverScript;
 
     // Use this for initialization
-	private void Start ()
+    private void Start ()
     {
         this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
         this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
@@ -146,9 +157,11 @@ public class ValuesPanel : MonoBehaviour
         {
             this.energieDispo = 0;
         }
-
+        
+        this.HoverScript.PressedHomeButton(this.energieDispo);
         this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
         this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+
     }
 
     public void UpdateEnergieWithHover(int value)
@@ -157,7 +170,7 @@ public class ValuesPanel : MonoBehaviour
         this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
         this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
 
-        this.EnergieImage.color = this.GreenColor;
+        this.EnergieSliderImage.color = this.GreenColor;
     }
 
     public void UpdateEnergieWithUnHover(int value)
@@ -166,7 +179,7 @@ public class ValuesPanel : MonoBehaviour
         this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
         this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
 
-        this.EnergieImage.color = this.Purplecolor;
+        this.EnergieSliderImage.color = this.Purplecolor;
 
     }
 

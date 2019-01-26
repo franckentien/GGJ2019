@@ -22,6 +22,9 @@ public class HoverScript : MonoBehaviour
 		
 	}
 
+    /// <summary>
+    /// The hover back home button.
+    /// </summary>
     public void hoverBackHomeButton()
     {
         
@@ -29,10 +32,19 @@ public class HoverScript : MonoBehaviour
         this.ValuesPanel.UpdateEnergieWithHover(10);
     }
 
+    /// <summary>
+    /// The unhover back home button.
+    /// </summary>
     public void UnhoverBackHomeButton()
     {
         this.ValuesPanel.UpdateEnergieWithUnHover(this.valEnergieSliderBeforeHover);
     }
 
-
+    /// <summary>
+    /// The pressed home button.
+    /// </summary>
+    public void PressedHomeButton(int newVal)
+    {
+        this.valEnergieSliderBeforeHover = newVal;
+    }
 }
