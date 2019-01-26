@@ -822,7 +822,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Energie \t \u2B08\u2191\nWork \t\t\u2198"
+  m_Text: "Energie \t \u2B08\u2191\nWork \t\t\u2194"
 --- !u!222 &211883811
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1398,8 +1398,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1022914668}
-          m_MethodName: hoverBackHomeButton
+        - m_Target: {fileID: 1470710757}
+          m_MethodName: hoverMakeSportButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1415,8 +1415,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1022914668}
-          m_MethodName: UnhoverBackHomeButton
+        - m_Target: {fileID: 1470710757}
+          m_MethodName: UnhoverMakeSportButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1468,8 +1468,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1022914668}
-        m_MethodName: backToHomeButtonClick
+      - m_Target: {fileID: 1470710757}
+        m_MethodName: MakeSportButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2699,9 +2699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ValuesPanel: {fileID: 1042834402}
-  EnergieSlider: {fileID: 1916752459}
   GameManager: {fileID: 1900021092}
-  valuesPanel: {fileID: 1042834402}
   valEnergieSliderBeforeHover: 0
   valMotivationSliderBeforeHover: 0
   valDysphoriaSliderBeforeHover: 0
@@ -2802,7 +2800,6 @@ MonoBehaviour:
   sliderWork: {fileID: 1196588886}
   valueSliderWorkText: {fileID: 1423429360}
   WorksliderImage: {fileID: 624794676}
-  HoverScript: {fileID: 1900021091}
   HomePanel: {fileID: 1022914668}
   GameManager: {fileID: 1900021092}
 --- !u!1 &1054176734
@@ -3857,6 +3854,7 @@ GameObject:
   - component: {fileID: 1385888665}
   - component: {fileID: 1385888667}
   - component: {fileID: 1385888666}
+  - component: {fileID: 1385888668}
   m_Layer: 5
   m_Name: FriendsMainPanel
   m_TagString: Untagged
@@ -3919,6 +3917,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385888664}
+--- !u!114 &1385888668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385888664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1f3da18c16b4c4f8ad9ffbbf418b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ValuesPanel: {fileID: 1042834402}
+  GameManager: {fileID: 1900021092}
+  valEnergieSliderBeforeHover: 0
+  valMotivationSliderBeforeHover: 0
+  valDysphoriaSliderBeforeHover: 0
+  valWorkSliderBeforeHover: 0
 --- !u!1 &1393685165
 GameObject:
   m_ObjectHideFlags: 0
@@ -4219,6 +4234,7 @@ GameObject:
   - component: {fileID: 1470710754}
   - component: {fileID: 1470710756}
   - component: {fileID: 1470710755}
+  - component: {fileID: 1470710757}
   m_Layer: 5
   m_Name: ActivityMainPanel
   m_TagString: Untagged
@@ -4281,6 +4297,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1470710753}
+--- !u!114 &1470710757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1470710753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5252768f00f5a4bbe3edcabe526deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ValuesPanel: {fileID: 1042834402}
+  GameManager: {fileID: 1900021092}
+  valEnergieSliderBeforeHover: 0
+  valMotivationSliderBeforeHover: 0
+  valDysphoriaSliderBeforeHover: 0
+  valWorkSliderBeforeHover: 0
 --- !u!1 &1495208834
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,8 +5960,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1022914668}
-          m_MethodName: hoverBackHomeButton
+        - m_Target: {fileID: 1385888668}
+          m_MethodName: hoverPlaywithFriendsButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5944,8 +5977,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1022914668}
-          m_MethodName: UnhoverBackHomeButton
+        - m_Target: {fileID: 1385888668}
+          m_MethodName: UnhoverPlaywithFriendsButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5997,8 +6030,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1022914668}
-        m_MethodName: backToHomeButtonClick
+      - m_Target: {fileID: 1385888668}
+        m_MethodName: PlaywithFriendsButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

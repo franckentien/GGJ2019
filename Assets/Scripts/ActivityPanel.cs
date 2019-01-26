@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// <summary>
 /// The home panel.
 /// </summary>
-public class FriendsPanel : MonoBehaviour
+public class ActivityPanel : MonoBehaviour
 {
     /// <summary>
     /// The values panel.
@@ -22,7 +22,7 @@ public class FriendsPanel : MonoBehaviour
     /// The val energie slider before hover.
     /// </summary>
     public int valEnergieSliderBeforeHover;
-    
+
     public int valMotivationSliderBeforeHover;
 
     public int valDysphoriaSliderBeforeHover;
@@ -48,16 +48,15 @@ public class FriendsPanel : MonoBehaviour
     /// <summary>
     /// The back to home button click.
     /// </summary>
-    public void PlaywithFriendsButtonClick()
+    public void MakeSportButtonClick()
     {
         this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
         this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
         this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
         this.valWorkSliderBeforeHover = this.GameManager.workDispo;
-
         
-        this.ValuesPanel.UpdateEnergie(-1);
-        this.ValuesPanel.UpdateMotivation(3);
+        this.ValuesPanel.UpdateEnergie(-3);
+        this.ValuesPanel.UpdateMotivation(2);
         this.ValuesPanel.UpdateDysphoria(-1);
         this.ValuesPanel.UpdateWork(-1);
     }
@@ -65,15 +64,15 @@ public class FriendsPanel : MonoBehaviour
     /// <summary>
     /// The hover back home button.
     /// </summary>
-    public void hoverPlaywithFriendsButton()
+    public void hoverMakeSportButton()
     {
         this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
         this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
         this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
         this.valWorkSliderBeforeHover = this.GameManager.workDispo;
 
-        this.ValuesPanel.UpdateEnergieHover(this.GameManager.energieDispo - 1);
-        this.ValuesPanel.UpdateMotivationHover(this.GameManager.motivationDispo + 3);
+        this.ValuesPanel.UpdateEnergieHover(this.GameManager.energieDispo - 3);
+        this.ValuesPanel.UpdateMotivationHover(this.GameManager.motivationDispo + 2);
         this.ValuesPanel.UpdateDysphoriaHover(this.GameManager.dysphoriaDispo - 1);
         this.ValuesPanel.UpdateWorkHover(this.GameManager.workDispo - 1);
     }
@@ -81,7 +80,7 @@ public class FriendsPanel : MonoBehaviour
     /// <summary>
     /// The unhover back home button.
     /// </summary>
-    public void UnhoverPlaywithFriendsButton()
+    public void UnhoverMakeSportButton()
     {
         this.ValuesPanel.UpdateEnergieHover(this.valEnergieSliderBeforeHover);
         this.ValuesPanel.UpdateMotivationHover(this.valMotivationSliderBeforeHover);

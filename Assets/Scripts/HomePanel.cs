@@ -49,9 +49,7 @@ public class HomePanel : MonoBehaviour
     public void backToHomeButtonClick()
     {
         this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
-        this.valWorkSliderBeforeHover = this.GameManager.workDispo;
         this.ValuesPanel.UpdateEnergie(5);
-        this.ValuesPanel.UpdateWork(-1);
     }
 
     /// <summary>
@@ -59,12 +57,8 @@ public class HomePanel : MonoBehaviour
     /// </summary>
     public void hoverBackHomeButton()
     {
-
         this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
         this.ValuesPanel.UpdateEnergieHover(this.GameManager.energieDispo + 5);
-
-        this.valWorkSliderBeforeHover = this.GameManager.workDispo;
-        this.ValuesPanel.UpdateWorkHover(this.GameManager.workDispo - 1);
     }
 
     /// <summary>
@@ -73,7 +67,6 @@ public class HomePanel : MonoBehaviour
     public void UnhoverBackHomeButton()
     {
         this.ValuesPanel.UpdateEnergieHover(this.valEnergieSliderBeforeHover);
-        this.ValuesPanel.UpdateWorkHover(this.valWorkSliderBeforeHover);
     }
 
 }
