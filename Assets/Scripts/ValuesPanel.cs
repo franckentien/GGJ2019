@@ -162,6 +162,16 @@ public class ValuesPanel : MonoBehaviour
         }
 
         this.GameManager.energieDispo = value;
+
+        if (this.GameManager.energieDispo > this.GameManager.energieMax)
+        {
+            this.GameManager.energieDispo = this.GameManager.energieMax;
+        }
+        else if (this.GameManager.energieDispo < 0)
+        {
+            this.GameManager.energieDispo = 0;
+        }
+
         this.valueSliderEnergieText.text = this.GameManager.energieDispo.ToString() + " / " + this.GameManager.energieMax + "\t";
         this.sliderEnergie.value = (float)this.GameManager.energieDispo / this.GameManager.energieMax;
     }
@@ -215,6 +225,16 @@ public class ValuesPanel : MonoBehaviour
         }
 
         this.GameManager.motivationDispo = value;
+
+        if (this.GameManager.motivationDispo > this.GameManager.motivationMax)
+        {
+            this.GameManager.motivationDispo = this.GameManager.motivationMax;
+        }
+        else if (this.GameManager.motivationDispo < 0)
+        {
+            this.GameManager.motivationDispo = 0;
+        }
+
         this.valueSliderMotivationText.text = this.GameManager.motivationDispo.ToString() + " / " + this.GameManager.motivationMax + "\t";
         this.sliderMotivation.value = (float)this.GameManager.motivationDispo / this.GameManager.motivationMax;
     }
@@ -268,6 +288,16 @@ public class ValuesPanel : MonoBehaviour
         }
 
         this.GameManager.dysphoriaDispo = value;
+
+        if (this.GameManager.dysphoriaDispo > this.GameManager.dysphoriaMax)
+        {
+            this.GameManager.dysphoriaDispo = this.GameManager.dysphoriaMax;
+        }
+        else if (this.GameManager.dysphoriaDispo < 0)
+        {
+            this.GameManager.dysphoriaDispo = 0;
+        }
+
         this.valueSliderDysphoriaText.text = this.GameManager.dysphoriaDispo.ToString() + " / " + this.GameManager.dysphoriaMax + "\t";
         this.sliderDysphoria.value = (float)this.GameManager.dysphoriaDispo / this.GameManager.dysphoriaMax;
     }
@@ -316,6 +346,16 @@ public class ValuesPanel : MonoBehaviour
         }
 
         this.GameManager.workDispo = value;
+
+        if (this.GameManager.workDispo > this.GameManager.workMax)
+        {
+            this.GameManager.workDispo = this.GameManager.workMax;
+        }
+        else if (this.GameManager.workDispo < 0)
+        {
+            this.GameManager.workDispo = 0;
+        }
+
         this.valueSliderWorkText.text = this.GameManager.workDispo.ToString() + " / " + this.GameManager.workMax + "\t";
         this.sliderWork.value = (float)this.GameManager.workDispo / this.GameManager.workMax;
     }
