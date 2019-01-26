@@ -46,7 +46,21 @@ public class ValuesPanel : MonoBehaviour
 
     public int workMax;
 
+    /// <summary>
+    /// The purplecolor.
+    /// </summary>
+    public Color Purplecolor;
 
+    /// <summary>
+    /// The green color.
+    /// </summary>
+    public Color GreenColor;
+
+    /// <summary>
+    /// The red color.
+    /// </summary>
+    public Color RedColor;
+    
     /// <summary>
     /// The slider energie.
     /// </summary>
@@ -56,6 +70,8 @@ public class ValuesPanel : MonoBehaviour
     /// The value slider energie.
     /// </summary>
     public Text valueSliderEnergieText;
+
+    public Image EnergieImage;
 
     /// <summary>
     /// The slider motivation.
@@ -121,8 +137,37 @@ public class ValuesPanel : MonoBehaviour
     public void UpdateEnergie(int amount)
     {
         this.energieDispo += amount;
+
+        if (this.energieDispo > this.energieMax)
+        {
+            this.energieDispo = this.energieMax;
+        }
+        else if (this.energieDispo < 0)
+        {
+            this.energieDispo = 0;
+        }
+
         this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
         this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+    }
+
+    public void UpdateEnergieWithHover(int value)
+    {
+        this.energieDispo = value;
+        this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
+        this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+
+        this.EnergieImage.color = this.GreenColor;
+    }
+
+    public void UpdateEnergieWithUnHover(int value)
+    {
+        this.energieDispo = value;
+        this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
+        this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+
+        this.EnergieImage.color = this.Purplecolor;
+
     }
 
     /// <summary>
@@ -134,6 +179,16 @@ public class ValuesPanel : MonoBehaviour
     public void UpdateMotivation(int amount)
     {
         this.motivationDispo += amount;
+
+        if (this.motivationDispo > this.motivationMax)
+        {
+            this.motivationDispo = this.motivationMax;
+        }
+        else if (this.motivationDispo < 0)
+        {
+            this.motivationDispo = 0;
+        }
+
         this.valueSliderMotivationText.text = this.motivationDispo.ToString() + " / " + this.motivationMax + "\t";
         this.sliderMotivation.value = (float)this.motivationDispo / this.motivationMax;
     }
@@ -147,6 +202,16 @@ public class ValuesPanel : MonoBehaviour
     public void UpdateDysphoria(int amount)
     {
         this.dysphoriaDispo += amount;
+
+        if (this.dysphoriaDispo > this.dysphoriaMax)
+        {
+            this.dysphoriaDispo = this.dysphoriaMax;
+        }
+        else if (this.dysphoriaDispo < 0)
+        {
+            this.dysphoriaDispo = 0;
+        }
+
         this.valueSliderDysphoriaText.text = this.dysphoriaDispo.ToString() + " / " + this.dysphoriaMax + "\t";
         this.sliderDysphoria.value = (float)this.dysphoriaDispo / this.dysphoriaMax;
 
@@ -161,6 +226,16 @@ public class ValuesPanel : MonoBehaviour
     public void UpdateWork(int amount)
     {
         this.workDispo += amount;
+
+        if (this.workDispo > this.workMax)
+        {
+            this.workDispo = this.workMax;
+        }
+        else if (this.workDispo < 0)
+        {
+            this.workDispo = 0;
+        }
+
         this.valueSliderWorkText.text = this.workDispo.ToString() + " / " + this.workMax + "\t";
         this.sliderWork.value = (float)this.workDispo / this.workMax;
 
