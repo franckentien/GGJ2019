@@ -8,61 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class ValuesPanel : MonoBehaviour
 {
-    #region Variable
 
-    /// <summary>
-    /// The energie dispo.
-    /// </summary>
-    public int energieDispo;
-
-    /// <summary>
-    /// The energie.
-    /// </summary>
-    public int energieMax;
-
-    /// <summary>
-    /// The motivation.
-    /// </summary>
-    public int motivationDispo;
-
-    /// <summary>
-    /// The motivation max.
-    /// </summary>
-    public int motivationMax;
-
-    /// <summary>
-    /// The disphoria.
-    /// </summary>
-    public int dysphoriaDispo;
-
-    /// <summary>
-    /// The dysphoria max.
-    /// </summary>
-    public int dysphoriaMax;
-
-    /// <summary>
-    /// The work.
-    /// </summary>
-    public int workDispo;
-
-    public int workMax;
-
-    /// <summary>
-    /// The purplecolor.
-    /// </summary>
-    public Color Purplecolor;
-
-    /// <summary>
-    /// The green color.
-    /// </summary>
-    public Color GreenColor;
-
-    /// <summary>
-    /// The red color.
-    /// </summary>
-    public Color RedColor;
-
-    #endregion
 
     #region SliderObject
 
@@ -115,20 +61,22 @@ public class ValuesPanel : MonoBehaviour
     /// </summary>
     public HoverScript HoverScript;
 
+    public GameManager GameManager;
+
     // Use this for initialization
     private void Start ()
     {
-        this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
-        this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+        this.valueSliderEnergieText.text = this.GameManager.energieDispo.ToString() + " / " + this.GameManager.energieMax + "\t";
+        this.sliderEnergie.value = (float)this.GameManager.energieDispo / this.GameManager.energieMax;
         
-        this.valueSliderMotivationText.text = this.motivationDispo.ToString() + " / " + this.motivationMax + "\t";
-        this.sliderMotivation.value = (float)this.motivationDispo / this.motivationMax;
+        this.valueSliderMotivationText.text = this.GameManager.motivationDispo.ToString() + " / " + this.GameManager.motivationMax + "\t";
+        this.sliderMotivation.value = (float)this.GameManager.motivationDispo / this.GameManager.motivationMax;
 
-        this.valueSliderDysphoriaText.text = this.dysphoriaDispo.ToString() + " / " + this.dysphoriaMax + "\t";
-        this.sliderDysphoria.value = (float)this.dysphoriaDispo / this.dysphoriaMax;
+        this.valueSliderDysphoriaText.text = this.GameManager.dysphoriaDispo.ToString() + " / " + this.GameManager.dysphoriaMax + "\t";
+        this.sliderDysphoria.value = (float)this.GameManager.dysphoriaDispo / this.GameManager.dysphoriaMax;
 
-        this.valueSliderWorkText.text = this.workDispo.ToString() + " / " + this.workMax + "\t";
-        this.sliderWork.value = (float)this.workDispo / this.workMax;
+        this.valueSliderWorkText.text = this.GameManager.workDispo.ToString() + " / " + this.GameManager.workMax + "\t";
+        this.sliderWork.value = (float)this.GameManager.workDispo / this.GameManager.workMax;
 
     }
 
@@ -147,39 +95,39 @@ public class ValuesPanel : MonoBehaviour
     /// </param>
     public void UpdateEnergie(int amount)
     {
-        this.energieDispo += amount;
+        this.GameManager.energieDispo += amount;
 
-        if (this.energieDispo > this.energieMax)
+        if (this.GameManager.energieDispo > this.GameManager.energieMax)
         {
-            this.energieDispo = this.energieMax;
+            this.GameManager.energieDispo = this.GameManager.energieMax;
         }
-        else if (this.energieDispo < 0)
+        else if (this.GameManager.energieDispo < 0)
         {
-            this.energieDispo = 0;
+            this.GameManager.energieDispo = 0;
         }
         
-        this.HoverScript.PressedHomeButton(this.energieDispo);
-        this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
-        this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+        this.HoverScript.PressedHomeButton(this.GameManager.energieDispo);
+        this.valueSliderEnergieText.text = this.GameManager.energieDispo.ToString() + " / " + this.GameManager.energieMax + "\t";
+        this.sliderEnergie.value = (float)this.GameManager.energieDispo / this.GameManager.energieMax;
 
     }
 
     public void UpdateEnergieWithHover(int value)
     {
-        this.energieDispo = value;
-        this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
-        this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+        this.GameManager.energieDispo = value;
+        this.valueSliderEnergieText.text = this.GameManager.energieDispo.ToString() + " / " + this.GameManager.energieMax + "\t";
+        this.sliderEnergie.value = (float)this.GameManager.energieDispo / this.GameManager.energieMax;
 
-        this.EnergieSliderImage.color = this.GreenColor;
+        this.EnergieSliderImage.color = this.GameManager.GreenColor;
     }
 
     public void UpdateEnergieWithUnHover(int value)
     {
-        this.energieDispo = value;
-        this.valueSliderEnergieText.text = this.energieDispo.ToString() + " / " + this.energieMax + "\t";
-        this.sliderEnergie.value = (float)this.energieDispo / this.energieMax;
+        this.GameManager.energieDispo = value;
+        this.valueSliderEnergieText.text = this.GameManager.energieDispo.ToString() + " / " + this.GameManager.energieMax + "\t";
+        this.sliderEnergie.value = (float)this.GameManager.energieDispo / this.GameManager.energieMax;
 
-        this.EnergieSliderImage.color = this.Purplecolor;
+        this.EnergieSliderImage.color = this.GameManager.Purplecolor;
 
     }
 
@@ -191,19 +139,19 @@ public class ValuesPanel : MonoBehaviour
     /// </param>
     public void UpdateMotivation(int amount)
     {
-        this.motivationDispo += amount;
+        this.GameManager.motivationDispo += amount;
 
-        if (this.motivationDispo > this.motivationMax)
+        if (this.GameManager.motivationDispo > this.GameManager.motivationMax)
         {
-            this.motivationDispo = this.motivationMax;
+            this.GameManager.motivationDispo = this.GameManager.motivationMax;
         }
-        else if (this.motivationDispo < 0)
+        else if (this.GameManager.motivationDispo < 0)
         {
-            this.motivationDispo = 0;
+            this.GameManager.motivationDispo = 0;
         }
 
-        this.valueSliderMotivationText.text = this.motivationDispo.ToString() + " / " + this.motivationMax + "\t";
-        this.sliderMotivation.value = (float)this.motivationDispo / this.motivationMax;
+        this.valueSliderMotivationText.text = this.GameManager.motivationDispo.ToString() + " / " + this.GameManager.motivationMax + "\t";
+        this.sliderMotivation.value = (float)this.GameManager.motivationDispo / this.GameManager.motivationMax;
     }
 
     /// <summary>
@@ -214,19 +162,19 @@ public class ValuesPanel : MonoBehaviour
     /// </param>
     public void UpdateDysphoria(int amount)
     {
-        this.dysphoriaDispo += amount;
+        this.GameManager.dysphoriaDispo += amount;
 
-        if (this.dysphoriaDispo > this.dysphoriaMax)
+        if (this.GameManager.dysphoriaDispo > this.GameManager.dysphoriaMax)
         {
-            this.dysphoriaDispo = this.dysphoriaMax;
+            this.GameManager.dysphoriaDispo = this.GameManager.dysphoriaMax;
         }
-        else if (this.dysphoriaDispo < 0)
+        else if (this.GameManager.dysphoriaDispo < 0)
         {
-            this.dysphoriaDispo = 0;
+            this.GameManager.dysphoriaDispo = 0;
         }
 
-        this.valueSliderDysphoriaText.text = this.dysphoriaDispo.ToString() + " / " + this.dysphoriaMax + "\t";
-        this.sliderDysphoria.value = (float)this.dysphoriaDispo / this.dysphoriaMax;
+        this.valueSliderDysphoriaText.text = this.GameManager.dysphoriaDispo.ToString() + " / " + this.GameManager.dysphoriaMax + "\t";
+        this.sliderDysphoria.value = (float)this.GameManager.dysphoriaDispo / this.GameManager.dysphoriaMax;
 
     }
 
@@ -238,19 +186,19 @@ public class ValuesPanel : MonoBehaviour
     /// </param>
     public void UpdateWork(int amount)
     {
-        this.workDispo += amount;
+        this.GameManager.workDispo += amount;
 
-        if (this.workDispo > this.workMax)
+        if (this.GameManager.workDispo > this.GameManager.workMax)
         {
-            this.workDispo = this.workMax;
+            this.GameManager.workDispo = this.GameManager.workMax;
         }
-        else if (this.workDispo < 0)
+        else if (this.GameManager.workDispo < 0)
         {
-            this.workDispo = 0;
+            this.GameManager.workDispo = 0;
         }
 
-        this.valueSliderWorkText.text = this.workDispo.ToString() + " / " + this.workMax + "\t";
-        this.sliderWork.value = (float)this.workDispo / this.workMax;
+        this.valueSliderWorkText.text = this.GameManager.workDispo.ToString() + " / " + this.GameManager.workMax + "\t";
+        this.sliderWork.value = (float)this.GameManager.workDispo / this.GameManager.workMax;
 
     }
 

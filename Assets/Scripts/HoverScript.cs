@@ -12,8 +12,10 @@ public class HoverScript : MonoBehaviour
 
     public int valEnergieSliderBeforeHover;
 
-	// Use this for initialization
-	void Start () {
+    public GameManager GameManager;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -28,7 +30,7 @@ public class HoverScript : MonoBehaviour
     public void hoverBackHomeButton()
     {
         
-        this.valEnergieSliderBeforeHover = this.ValuesPanel.energieDispo;
+        this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
         this.ValuesPanel.UpdateEnergieWithHover(10);
     }
 
