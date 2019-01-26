@@ -61,6 +61,8 @@ public class ValuesPanel : MonoBehaviour
     /// </summary>
     public HoverScript HoverScript;
 
+    public HomePanel HomePanel;
+
     public GameManager GameManager;
 
     // Use this for initialization
@@ -106,7 +108,6 @@ public class ValuesPanel : MonoBehaviour
             this.GameManager.energieDispo = 0;
         }
         
-        this.HoverScript.PressedHomeButton(this.GameManager.energieDispo);
         this.valueSliderEnergieText.text = this.GameManager.energieDispo.ToString() + " / " + this.GameManager.energieMax + "\t";
         this.sliderEnergie.value = (float)this.GameManager.energieDispo / this.GameManager.energieMax;
 

@@ -1226,7 +1226,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 883245967}
   m_HandleRect: {fileID: 0}
@@ -1606,7 +1606,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4686c0a47dbda0a4db8390dd9695f0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ValuesPanel: {fileID: 1042834402}
+  EnergieSlider: {fileID: 1916752459}
+  GameManager: {fileID: 1900021092}
   valuesPanel: {fileID: 1042834402}
+  valEnergieSliderBeforeHover: 0
 --- !u!1 &1042834398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1705,7 @@ MonoBehaviour:
   sliderWork: {fileID: 1196588886}
   valueSliderWorkText: {fileID: 1423429360}
   HoverScript: {fileID: 1900021091}
+  HomePanel: {fileID: 1022914668}
   GameManager: {fileID: 1900021092}
 --- !u!1 &1054176734
 GameObject:
@@ -1996,7 +2001,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1495208835}
   m_HandleRect: {fileID: 0}
@@ -2082,7 +2087,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 624794675}
   m_HandleRect: {fileID: 0}
@@ -3174,10 +3179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd34df40590bc94dadcec914fa0acbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ValuesPanel: {fileID: 1042834402}
-  EnergieSlider: {fileID: 1916752459}
-  valEnergieSliderBeforeHover: 0
-  GameManager: {fileID: 0}
 --- !u!114 &1900021092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3272,7 +3273,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 968395369}
   m_HandleRect: {fileID: 0}
@@ -3340,7 +3341,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1900021091}
+        - m_Target: {fileID: 1022914668}
           m_MethodName: hoverBackHomeButton
           m_Mode: 1
           m_Arguments:
@@ -3357,7 +3358,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1900021091}
+        - m_Target: {fileID: 1022914668}
           m_MethodName: UnhoverBackHomeButton
           m_Mode: 1
           m_Arguments:
