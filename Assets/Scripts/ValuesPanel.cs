@@ -74,11 +74,6 @@ public class ValuesPanel : MonoBehaviour
 
     #endregion
 
-    /// <summary>
-    /// The hover script.
-    /// </summary>
-    public HoverScript HoverScript;
-
     public HomePanel HomePanel;
 
     public GameManager GameManager;
