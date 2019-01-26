@@ -22,6 +22,9 @@ public class ValuesPanel : MonoBehaviour
     /// </summary>
     public Text valueSliderEnergieText;
 
+    /// <summary>
+    /// The energie slider image.
+    /// </summary>
     public Image EnergieSliderImage;
 
     /// <summary>
@@ -35,6 +38,11 @@ public class ValuesPanel : MonoBehaviour
     public Text valueSliderMotivationText;
 
     /// <summary>
+    /// The motivation slider image.
+    /// </summary>
+    public Image MotivationSliderImage;
+
+    /// <summary>
     /// The slider dysphoria.
     /// </summary>
     public Slider sliderDysphoria;
@@ -45,6 +53,11 @@ public class ValuesPanel : MonoBehaviour
     public Text valueSliderDysphoriaText;
 
     /// <summary>
+    /// The dysphoria slider image.
+    /// </summary>
+    public Image DysphoriaSliderImage;
+
+    /// <summary>
     /// The slider dysphoria.
     /// </summary>
     public Slider sliderWork;
@@ -53,6 +66,11 @@ public class ValuesPanel : MonoBehaviour
     /// The value slider work text.
     /// </summary>
     public Text valueSliderWorkText;
+
+    /// <summary>
+    /// The workslider image.
+    /// </summary>
+    public Image WorksliderImage;
 
     #endregion
 
@@ -79,6 +97,11 @@ public class ValuesPanel : MonoBehaviour
 
         this.valueSliderWorkText.text = this.GameManager.workDispo.ToString() + " / " + this.GameManager.workMax + "\t";
         this.sliderWork.value = (float)this.GameManager.workDispo / this.GameManager.workMax;
+
+        this.EnergieSliderImage.color = this.GameManager.Purplecolor;
+        this.MotivationSliderImage.color = this.GameManager.Purplecolor;
+        this.DysphoriaSliderImage.color = this.GameManager.Purplecolor;
+        this.WorksliderImage.color = this.GameManager.Purplecolor;
 
     }
 
@@ -113,23 +136,34 @@ public class ValuesPanel : MonoBehaviour
 
     }
 
-    public void UpdateEnergieWithHover(int value)
+    /// <summary>
+    /// The update energie with hover.
+    /// </summary>
+    /// <param name="value">
+    /// The value.
+    /// </param>
+    public void UpdateEnergieHover(int value)
     {
+
+        if (this.EnergieSliderImage.color == this.GameManager.Purplecolor)
+        {
+            if (value > this.GameManager.energieDispo)
+            {
+                this.EnergieSliderImage.color = this.GameManager.GreenColor;
+            }
+            else if (value < this.GameManager.energieDispo)
+            {
+                this.EnergieSliderImage.color = this.GameManager.RedColor;
+            }
+        }
+        else
+        {
+            this.EnergieSliderImage.color = this.GameManager.Purplecolor;
+        }
+
         this.GameManager.energieDispo = value;
         this.valueSliderEnergieText.text = this.GameManager.energieDispo.ToString() + " / " + this.GameManager.energieMax + "\t";
         this.sliderEnergie.value = (float)this.GameManager.energieDispo / this.GameManager.energieMax;
-
-        this.EnergieSliderImage.color = this.GameManager.GreenColor;
-    }
-
-    public void UpdateEnergieWithUnHover(int value)
-    {
-        this.GameManager.energieDispo = value;
-        this.valueSliderEnergieText.text = this.GameManager.energieDispo.ToString() + " / " + this.GameManager.energieMax + "\t";
-        this.sliderEnergie.value = (float)this.GameManager.energieDispo / this.GameManager.energieMax;
-
-        this.EnergieSliderImage.color = this.GameManager.Purplecolor;
-
     }
 
     /// <summary>
@@ -156,6 +190,36 @@ public class ValuesPanel : MonoBehaviour
     }
 
     /// <summary>
+    /// The update motivation with hover.
+    /// </summary>
+    /// <param name="value">
+    /// The value.
+    /// </param>
+    public void UpdateMotivationHover(int value)
+    {
+
+        if (this.MotivationSliderImage.color == this.GameManager.Purplecolor)
+        {
+            if (value > this.GameManager.motivationDispo)
+            {
+                this.MotivationSliderImage.color = this.GameManager.GreenColor;
+            }
+            else if (value < this.GameManager.motivationDispo)
+            {
+                this.MotivationSliderImage.color = this.GameManager.RedColor;
+            }
+        }
+        else
+        {
+            this.MotivationSliderImage.color = this.GameManager.Purplecolor;
+        }
+
+        this.GameManager.motivationDispo = value;
+        this.valueSliderMotivationText.text = this.GameManager.motivationDispo.ToString() + " / " + this.GameManager.motivationMax + "\t";
+        this.sliderMotivation.value = (float)this.GameManager.motivationDispo / this.GameManager.motivationMax;
+    }
+
+    /// <summary>
     /// The update dysphoria.
     /// </summary>
     /// <param name="amount">
@@ -176,7 +240,36 @@ public class ValuesPanel : MonoBehaviour
 
         this.valueSliderDysphoriaText.text = this.GameManager.dysphoriaDispo.ToString() + " / " + this.GameManager.dysphoriaMax + "\t";
         this.sliderDysphoria.value = (float)this.GameManager.dysphoriaDispo / this.GameManager.dysphoriaMax;
+    }
 
+    /// <summary>
+    /// The update dysphoria hover.
+    /// </summary>
+    /// <param name="value">
+    /// The value.
+    /// </param>
+    public void UpdateDysphoriaHover(int value)
+    {
+
+        if (this.DysphoriaSliderImage.color == this.GameManager.Purplecolor)
+        {
+            if (value > this.GameManager.dysphoriaDispo)
+            {
+                this.DysphoriaSliderImage.color = this.GameManager.GreenColor;
+            }
+            else if (value < this.GameManager.dysphoriaDispo)
+            {
+                this.DysphoriaSliderImage.color = this.GameManager.RedColor;
+            }
+        }
+        else
+        {
+            this.DysphoriaSliderImage.color = this.GameManager.Purplecolor;
+        }
+
+        this.GameManager.dysphoriaDispo = value;
+        this.valueSliderDysphoriaText.text = this.GameManager.dysphoriaDispo.ToString() + " / " + this.GameManager.dysphoriaMax + "\t";
+        this.sliderDysphoria.value = (float)this.GameManager.dysphoriaDispo / this.GameManager.dysphoriaMax;
     }
 
     /// <summary>
@@ -201,6 +294,30 @@ public class ValuesPanel : MonoBehaviour
         this.valueSliderWorkText.text = this.GameManager.workDispo.ToString() + " / " + this.GameManager.workMax + "\t";
         this.sliderWork.value = (float)this.GameManager.workDispo / this.GameManager.workMax;
 
+    }
+
+    public void UpdateWorkHover(int value)
+    {
+
+        if (this.WorksliderImage.color == this.GameManager.Purplecolor)
+        {
+            if (value > this.GameManager.workDispo)
+            {
+                this.WorksliderImage.color = this.GameManager.GreenColor;
+            }
+            else if (value < this.GameManager.workDispo)
+            {
+                this.WorksliderImage.color = this.GameManager.RedColor;
+            }
+        }
+        else
+        {
+            this.WorksliderImage.color = this.GameManager.Purplecolor;
+        }
+
+        this.GameManager.workDispo = value;
+        this.valueSliderWorkText.text = this.GameManager.workDispo.ToString() + " / " + this.GameManager.workMax + "\t";
+        this.sliderWork.value = (float)this.GameManager.workDispo / this.GameManager.workMax;
     }
 
 }

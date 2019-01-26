@@ -2089,7 +2089,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\tEnergie"
+  m_Text: "\tEnergy"
 --- !u!222 &737848027
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2703,6 +2703,9 @@ MonoBehaviour:
   GameManager: {fileID: 1900021092}
   valuesPanel: {fileID: 1042834402}
   valEnergieSliderBeforeHover: 0
+  valMotivationSliderBeforeHover: 0
+  valDysphoriaSliderBeforeHover: 0
+  valWorkSliderBeforeHover: 0
 --- !u!1 &1042834398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,10 +2795,13 @@ MonoBehaviour:
   EnergieSliderImage: {fileID: 968395370}
   sliderMotivation: {fileID: 1190125615}
   valueSliderMotivationText: {fileID: 740556724}
+  MotivationSliderImage: {fileID: 1495208836}
   sliderDysphoria: {fileID: 847541089}
   valueSliderDysphoriaText: {fileID: 239576962}
+  DysphoriaSliderImage: {fileID: 883245968}
   sliderWork: {fileID: 1196588886}
   valueSliderWorkText: {fileID: 1423429360}
+  WorksliderImage: {fileID: 624794676}
   HoverScript: {fileID: 1900021091}
   HomePanel: {fileID: 1022914668}
   GameManager: {fileID: 1900021092}
@@ -3162,7 +3168,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Energie \t\u2B08\u2198\nWork \t\t\u2198"
+  m_Text: "Energie \t\u2B08\u2193\nWork \t\t\u2198"
 --- !u!222 &1082505216
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3406,7 +3412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Place / Parc
+  m_Text: Place / Park
 --- !u!222 &1179148191
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4048,7 +4054,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Motivation \t\u2B08\u2B08\u2198\nDysphoria\t\u2198"
+  m_Text: "Motivation \t\u2B08\u2B08\u2198\nDysphoria\t\u2197"
 --- !u!222 &1400153722
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5472,7 +5478,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6171,8 +6177,8 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
+    m_MaxSize: 20
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
