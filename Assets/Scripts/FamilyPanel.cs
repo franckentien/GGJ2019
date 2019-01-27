@@ -59,10 +59,6 @@ public class FamilyPanel : MonoBehaviour
         {
             this.InfoPanel.UpdateTextLogContent("You want to sleep, it's too risky to drive.\n" + "You maybe need to sleep a little before.");
         }
-        else if (this.valWorkSliderBeforeHover - 1 < 0)
-        {
-            this.InfoPanel.UpdateTextLogContent("You want to visit your family but you have to many work.\n" + "You may finish the important task before.");
-        }
         else
         {
             this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
@@ -73,9 +69,10 @@ public class FamilyPanel : MonoBehaviour
             this.ValuesPanel.UpdateEnergie(-1);
             this.ValuesPanel.UpdateMotivation(1);
             this.ValuesPanel.UpdateDysphoria(-1);
-            this.ValuesPanel.UpdateWork(-1);
 
             this.InfoPanel.UpdateTextLogContent("Your family love you.\n" + "Your are more motivated and you are less disphoric");
+
+            this.InfoPanel.UpdateDateToNextDay();
         }
     }
 

@@ -29,9 +29,9 @@ public class InfoPanel : MonoBehaviour
     /// </summary>
     void Start()
     {
-        this.dateTime = new DateTime(2019,01,01);
-        this.dateTime = System.DateTime.Now;
+        this.dateTime = new DateTime(2019,01,27);
         this.DateText.text = this.dateTime.ToString("D");
+
 
         this.LogStoryText.text = "In this game you play an Asexual character who try to accept his own sexuality orientation.\n"
                                  + "Your Goal is to make some activities to increase your Self-confidence";
@@ -50,7 +50,9 @@ public class InfoPanel : MonoBehaviour
     /// </summary>
     public void UpdateDateToNextDay()
     {
-        this.dateTime.AddDays(1);
+        Debug.Log(this.dateTime.ToString("D"));
+        this.dateTime = this.dateTime.AddDays(1);
+        Debug.Log(this.dateTime.ToString("D"));
         this.DateText.text = this.dateTime.ToString("D");
     }
 
@@ -62,7 +64,6 @@ public class InfoPanel : MonoBehaviour
     /// </param>
     public void UpdateTextLogContent(string textContent)
     {
-        this.UpdateDateToNextDay();
         this.LogStoryText.text = textContent;
     }
 }

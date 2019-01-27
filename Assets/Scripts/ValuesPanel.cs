@@ -275,11 +275,11 @@ public class ValuesPanel : MonoBehaviour
         {
             if (value > this.GameManager.dysphoriaDispo)
             {
-                this.DysphoriaSliderImage.color = this.GameManager.GreenColor;
+                this.DysphoriaSliderImage.color = this.GameManager.RedColor;
             }
             else if (value < this.GameManager.dysphoriaDispo)
             {
-                this.DysphoriaSliderImage.color = this.GameManager.RedColor;
+                this.DysphoriaSliderImage.color = this.GameManager.GreenColor;
             }
         }
         else

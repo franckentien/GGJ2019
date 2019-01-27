@@ -64,6 +64,8 @@ public class HomePanel : MonoBehaviour
             this.ValuesPanel.UpdateEnergie(this.GameManager.energieMax / 2);
 
             this.InfoPanel.UpdateTextLogContent("It's good to sleep and take a shower. \n" + " You are now ready for new adventures");
+
+            this.InfoPanel.UpdateDateToNextDay();
         }
     }
 

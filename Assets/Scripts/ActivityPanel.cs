@@ -77,6 +77,8 @@ public class ActivityPanel : MonoBehaviour
             this.ValuesPanel.UpdateWork(-1);
 
             this.InfoPanel.UpdateTextLogContent("Do some sport change your mind.\n" + "Your are tired but your have more motivation and less dysphoria");
+
+            this.InfoPanel.UpdateDateToNextDay();
         }
     }
 

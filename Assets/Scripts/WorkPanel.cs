@@ -86,6 +86,8 @@ public class WorkPanel : MonoBehaviour
             this.ValuesPanel.UpdateWork(3);
 
             this.InfoPanel.UpdateTextLogContent("You work on a non friendly environment your dysphoria increase.\n" + "You lose somme energy and motivation.");
+
+            this.InfoPanel.UpdateDateToNextDay();
         }
 
     }

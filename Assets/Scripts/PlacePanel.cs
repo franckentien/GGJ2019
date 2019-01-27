@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,7 +39,7 @@ public class PlacePanel : MonoBehaviour
             this.GameManager.selfConfidence = 0;
         }
 
-        this.SelfconfidenceSliderText.text = (this.GameManager.selfConfidence * 100).ToString();
+        this.SelfconfidenceSliderText.text = Convert.ToInt32(this.GameManager.selfConfidence * 100).ToString(); 
         this.SelfConfidenceSlider.value = this.GameManager.selfConfidence;
     }
 

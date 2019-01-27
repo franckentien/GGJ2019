@@ -81,6 +81,8 @@ public class SocialNetworkPanel : MonoBehaviour
             this.ValuesPanel.UpdateWork(-1);
 
             this.InfoPanel.UpdateTextLogContent("You see some lolcats on facebook\n" + "Your motivation increase but you see some post who hurt you.");
+
+            this.InfoPanel.UpdateDateToNextDay();
         }
     }
 
