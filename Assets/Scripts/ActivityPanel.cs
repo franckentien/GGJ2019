@@ -55,17 +55,30 @@ public class ActivityPanel : MonoBehaviour
     /// </summary>
     public void MakeSportButtonClick()
     {
-        this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
-        this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
-        this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
-        this.valWorkSliderBeforeHover = this.GameManager.workDispo;
-        
-        this.ValuesPanel.UpdateEnergie(-3);
-        this.ValuesPanel.UpdateMotivation(2);
-        this.ValuesPanel.UpdateDysphoria(-1);
-        this.ValuesPanel.UpdateWork(-1);
+        if (this.valEnergieSliderBeforeHover - 3 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("You don't want to do sport activity.\n" + "Why not take a nap in front of Netflix ? ");
+        }
+ 
+        if (this.valWorkSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("Just when you go out your boss call you.\n" + "You need to go work before do sport");
+        }
+        else
+        {
 
-        this.InfoPanel.UpdateTextLogContent("Do some sport change your mind.\n" + "Your are tired but your have more motivation and less dysphoria");
+            this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
+            this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
+            this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
+            this.valWorkSliderBeforeHover = this.GameManager.workDispo;
+
+            this.ValuesPanel.UpdateEnergie(-3);
+            this.ValuesPanel.UpdateMotivation(2);
+            this.ValuesPanel.UpdateDysphoria(-1);
+            this.ValuesPanel.UpdateWork(-1);
+
+            this.InfoPanel.UpdateTextLogContent("Do some sport change your mind.\n" + "Your are tired but your have more motivation and less dysphoria");
+        }
     }
 
     /// <summary>
