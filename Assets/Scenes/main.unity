@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 107398044}
   - component: {fileID: 107398043}
   m_Layer: 5
-  m_Name: NbAlliensValueText
+  m_Name: NbAlliesValueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1300,6 +1300,7 @@ GameObject:
   - component: {fileID: 357529712}
   - component: {fileID: 357529714}
   - component: {fileID: 357529713}
+  - component: {fileID: 357529715}
   m_Layer: 5
   m_Name: ParcMainPanel
   m_TagString: Untagged
@@ -1362,6 +1363,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 357529711}
+--- !u!114 &357529715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 357529711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbfe19ff7b3e1f64681681d0e803e4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfConfidenceSlider: {fileID: 1589244578}
+  SelfconfidenceSliderText: {fileID: 1601861346}
+  ValuesAlliesText: {fileID: 107398043}
+  GameManager: {fileID: 0}
 --- !u!1 &378052347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3688,7 +3704,7 @@ RectTransform:
   m_Father: {fileID: 1589244577}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.05, y: 0.3}
+  m_AnchorMin: {x: 0.1, y: 0.3}
   m_AnchorMax: {x: 0.95, y: 0.7}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -3719,7 +3735,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -4682,10 +4698,10 @@ RectTransform:
   m_Father: {fileID: 1589244577}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 67.850006, y: 0}
-  m_SizeDelta: {x: 135.71, y: 19.57}
+  m_AnchorMin: {x: 0.05, y: 0.3}
+  m_AnchorMax: {x: 0.9, y: 0.7}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601861346
 MonoBehaviour:
@@ -5416,6 +5432,8 @@ MonoBehaviour:
   dysphoriaMax: 10
   workDispo: 8
   workMax: 10
+  selfConfidence: 0
+  alliesNumber: 0
   Purplecolor: {r: 0.7490196, g: 0.30588236, b: 0.90588236, a: 1}
   GreenColor: {r: 0.3694853, g: 0.75, b: 0.40384054, a: 1}
   RedColor: {r: 0.8455882, g: 0.310878, b: 0.310878, a: 1}

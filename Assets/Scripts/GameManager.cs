@@ -41,7 +41,20 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public int workDispo;
 
+    /// <summary>
+    /// The work max.
+    /// </summary>
     public int workMax;
+
+    /// <summary>
+    /// The self confidence.
+    /// </summary>
+    public float selfConfidence;
+
+    /// <summary>
+    /// The allies number.
+    /// </summary>
+    public int alliesNumber;
 
     /// <summary>
     /// The purplecolor.
