@@ -55,17 +55,33 @@ public class SocialNetworkPanel : MonoBehaviour
     /// </summary>
     public void GoOnlineButtonClick()
     {
-        this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
-        this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
-        this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
-        this.valWorkSliderBeforeHover = this.GameManager.workDispo;
+        if (this.valEnergieSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("You try to open twitter but you fall asleep.\n" + "Turn off your phone and try to sleep");
+        }
+        else if (this.valDysphoriaSliderBeforeHover >= this.GameManager.dysphoriaMax)
+        {
+            this.InfoPanel.UpdateTextLogContent("Last time you see some content who trigger you.\n" + "You don't want to open Social network for the moment.");
+        }
+        if (this.valWorkSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("When you take a look on your notifications you see your boss call you 5 times.\n" + "You should try to recall it before.");
+        }
 
-        this.ValuesPanel.UpdateEnergie(-1);
-        this.ValuesPanel.UpdateMotivation(1);
-        this.ValuesPanel.UpdateDysphoria(1);
-        this.ValuesPanel.UpdateWork(-1);
+        else
+        {
+            this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
+            this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
+            this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
+            this.valWorkSliderBeforeHover = this.GameManager.workDispo;
 
-        this.InfoPanel.UpdateTextLogContent("You pass time on web.\n" + "Your motivation increase but you see some post who hurt you.");
+            this.ValuesPanel.UpdateEnergie(-1);
+            this.ValuesPanel.UpdateMotivation(1);
+            this.ValuesPanel.UpdateDysphoria(1);
+            this.ValuesPanel.UpdateWork(-1);
+
+            this.InfoPanel.UpdateTextLogContent("You see some lolcats on facebook\n" + "Your motivation increase but you see some post who hurt you.");
+        }
     }
 
     /// <summary>

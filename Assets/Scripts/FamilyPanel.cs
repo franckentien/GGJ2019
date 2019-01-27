@@ -59,7 +59,7 @@ public class FamilyPanel : MonoBehaviour
         {
             this.InfoPanel.UpdateTextLogContent("You want to sleep, it's too risky to drive.\n" + "You maybe need to sleep a little before.");
         }
-        if (this.valWorkSliderBeforeHover - 1 < 0)
+        else if (this.valWorkSliderBeforeHover - 1 < 0)
         {
             this.InfoPanel.UpdateTextLogContent("You want to visit your family but you have to many work.\n" + "You may finish the important task before.");
         }
@@ -77,9 +77,6 @@ public class FamilyPanel : MonoBehaviour
 
             this.InfoPanel.UpdateTextLogContent("Your family love you.\n" + "Your are more motivated and you are less disphoric");
         }
-
-
-
     }
 
     /// <summary>

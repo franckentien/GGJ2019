@@ -59,8 +59,7 @@ public class ActivityPanel : MonoBehaviour
         {
             this.InfoPanel.UpdateTextLogContent("You don't want to do sport activity.\n" + "Why not take a nap in front of Netflix ? ");
         }
- 
-        if (this.valWorkSliderBeforeHover - 1 < 0)
+        else if (this.valWorkSliderBeforeHover - 1 < 0)
         {
             this.InfoPanel.UpdateTextLogContent("Just when you go out your boss call you.\n" + "You need to go work before do sport");
         }

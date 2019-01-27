@@ -55,6 +55,16 @@ public class FriendsPanel : MonoBehaviour
     /// </summary>
     public void PlaywithFriendsButtonClick()
     {
+        if (this.valEnergieSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("You fight against sleep.\n" + "Try to sleep before see your friends");
+        }
+        if (this.valWorkSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("You want to do some activity but all your friends work.\n" + "You should do the same.");
+        }
+        else
+        {
         this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
         this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
         this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
@@ -66,6 +76,7 @@ public class FriendsPanel : MonoBehaviour
         this.ValuesPanel.UpdateWork(-1);
 
         this.InfoPanel.UpdateTextLogContent("It's good to pass time with friends.\n" + "You feel better");
+        }
     }
 
     /// <summary>
