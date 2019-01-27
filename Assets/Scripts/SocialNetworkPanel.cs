@@ -14,6 +14,11 @@ public class SocialNetworkPanel : MonoBehaviour
     public ValuesPanel ValuesPanel;
 
     /// <summary>
+    /// The info panel.
+    /// </summary>
+    public InfoPanel InfoPanel;
+
+    /// <summary>
     /// The game manager.
     /// </summary>
     public GameManager GameManager;

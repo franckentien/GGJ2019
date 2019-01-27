@@ -14,6 +14,11 @@ public class HomePanel : MonoBehaviour
     public ValuesPanel ValuesPanel;
 
     /// <summary>
+    /// The info panel.
+    /// </summary>
+    public InfoPanel InfoPanel;
+
+    /// <summary>
     /// The game manager.
     /// </summary>
     public GameManager GameManager;
@@ -49,7 +54,7 @@ public class HomePanel : MonoBehaviour
     public void backToHomeButtonClick()
     {
         this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
-        this.ValuesPanel.UpdateEnergie(5);
+        this.ValuesPanel.UpdateEnergie(this.GameManager.energieMax / 2);
     }
 
     /// <summary>
@@ -58,7 +63,7 @@ public class HomePanel : MonoBehaviour
     public void hoverBackHomeButton()
     {
         this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
-        this.ValuesPanel.UpdateEnergieHover(this.GameManager.energieDispo + 5);
+        this.ValuesPanel.UpdateEnergieHover(this.GameManager.energieDispo + (this.GameManager.energieMax / 2));
     }
 
     /// <summary>

@@ -14,6 +14,11 @@ public class WorkPanel : MonoBehaviour
     public ValuesPanel ValuesPanel;
 
     /// <summary>
+    /// The info panel.
+    /// </summary>
+    public InfoPanel InfoPanel;
+
+    /// <summary>
     /// The game manager.
     /// </summary>
     public GameManager GameManager;
@@ -59,6 +64,8 @@ public class WorkPanel : MonoBehaviour
         this.ValuesPanel.UpdateMotivation(-1);
         this.ValuesPanel.UpdateDysphoria(2);
         this.ValuesPanel.UpdateWork(3);
+
+        this.InfoPanel.UpdateTextLogContent("You work on a non friendly environment your dysphoria increase.\n" + "You lose somme energy and motivation.");
     }
 
     /// <summary>

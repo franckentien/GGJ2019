@@ -48,7 +48,6 @@ public class PlacePanel : MonoBehaviour
         this.ValuesAlliesText.text = this.GameManager.alliesNumber.ToString();
     }
 
-    
     /// <summary>
     /// Use this for initialization
     /// </summary>

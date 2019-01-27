@@ -17,8 +17,12 @@ public class InfoPanel : MonoBehaviour
     /// <summary>
     /// The date text.
     /// </summary>
-    public Text DateText; 
+    public Text DateText;
 
+    /// <summary>
+    /// The log story text.
+    /// </summary>
+    public Text LogStoryText;
 
     /// <summary>
     /// Use this for initialization
@@ -28,6 +32,9 @@ public class InfoPanel : MonoBehaviour
         this.dateTime = new DateTime(2019,01,01);
         this.dateTime = System.DateTime.Now;
         this.DateText.text = this.dateTime.ToString("D");
+
+        this.LogStoryText.text = "In this game you play an Asexual character who try to accept his own sexuality orientation.\n"
+                                 + "Your Goal is to make some activities to increase your Self-confidence";
     }
 
     /// <summary>
@@ -38,9 +45,24 @@ public class InfoPanel : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// The update date to next day.
+    /// </summary>
     public void UpdateDateToNextDay()
     {
         this.dateTime.AddDays(1);
         this.DateText.text = this.dateTime.ToString("D");
+    }
+
+    /// <summary>
+    /// The update text log content.
+    /// </summary>
+    /// <param name="textContent">
+    /// The text content.
+    /// </param>
+    public void UpdateTextLogContent(string textContent)
+    {
+        this.UpdateDateToNextDay();
+        this.LogStoryText.text = textContent;
     }
 }
