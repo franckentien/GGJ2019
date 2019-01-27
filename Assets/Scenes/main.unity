@@ -1378,7 +1378,7 @@ MonoBehaviour:
   SelfConfidenceSlider: {fileID: 1589244578}
   SelfconfidenceSliderText: {fileID: 1601861346}
   ValuesAlliesText: {fileID: 107398043}
-  GameManager: {fileID: 0}
+  GameManager: {fileID: 1900021092}
 --- !u!1 &378052347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,7 +2305,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Energy \t \u2B08\u2195\nWork \t\t\u2198"
+  m_Text: "Energy \t \u2B08\u2195\nWork \t\t\u2194"
 --- !u!222 &751576549
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2871,6 +2871,7 @@ MonoBehaviour:
   WorksliderImage: {fileID: 624794676}
   HomePanel: {fileID: 1022914668}
   GameManager: {fileID: 1900021092}
+  PlacePanel: {fileID: 357529715}
 --- !u!1 &1054176734
 GameObject:
   m_ObjectHideFlags: 0
