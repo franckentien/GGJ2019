@@ -53,10 +53,18 @@ public class HomePanel : MonoBehaviour
     /// </summary>
     public void backToHomeButtonClick()
     {
-        this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
-        this.ValuesPanel.UpdateEnergie(this.GameManager.energieMax / 2);
 
-        this.InfoPanel.UpdateTextLogContent("It's good to sleep and take a shower. \n" + " You are now ready for new adventures");
+        if (this.valEnergieSliderBeforeHover >= this.GameManager.energieMax)
+        {
+            this.InfoPanel.UpdateTextLogContent("You don't need to go at home you are already thoroughly.");
+        }
+        else
+        {
+            this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
+            this.ValuesPanel.UpdateEnergie(this.GameManager.energieMax / 2);
+
+            this.InfoPanel.UpdateTextLogContent("It's good to sleep and take a shower. \n" + " You are now ready for new adventures");
+        }
     }
 
     /// <summary>
@@ -75,5 +83,4 @@ public class HomePanel : MonoBehaviour
     {
         this.ValuesPanel.UpdateEnergieHover(this.valEnergieSliderBeforeHover);
     }
-
 }
