@@ -55,17 +55,39 @@ public class WorkPanel : MonoBehaviour
     /// </summary>
     public void GoToWorkButtonClick()
     {
-        this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
-        this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
-        this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
-        this.valWorkSliderBeforeHover = this.GameManager.workDispo;
+        
+        if (this.valEnergieSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("You don't have enough energy to work\n" + "You maybe need to sleep at home.");
+        }
+        else if (this.valMotivationSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("You really don't want to work\n" + "You need to motive yourself before.");
+        }
+        else if (this.valDysphoriaSliderBeforeHover >= this.GameManager.dysphoriaMax)
+        {
+            this.InfoPanel.UpdateTextLogContent("You are paralyzed by stress\n" + "Try to change your mind before go to work again");
+        }
+        else if (this.valWorkSliderBeforeHover >= this.GameManager.workMax)
+        {
+            this.InfoPanel.UpdateTextLogContent("You open Outlook but you don't have new mails\n" + "Take a break and come back later !");
+        }
+        else
+        {
 
-        this.ValuesPanel.UpdateEnergie(-1);
-        this.ValuesPanel.UpdateMotivation(-1);
-        this.ValuesPanel.UpdateDysphoria(2);
-        this.ValuesPanel.UpdateWork(3);
+            this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
+            this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
+            this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
+            this.valWorkSliderBeforeHover = this.GameManager.workDispo;
 
-        this.InfoPanel.UpdateTextLogContent("You work on a non friendly environment your dysphoria increase.\n" + "You lose somme energy and motivation.");
+            this.ValuesPanel.UpdateEnergie(-1);
+            this.ValuesPanel.UpdateMotivation(-1);
+            this.ValuesPanel.UpdateDysphoria(2);
+            this.ValuesPanel.UpdateWork(3);
+
+            this.InfoPanel.UpdateTextLogContent("You work on a non friendly environment your dysphoria increase.\n" + "You lose somme energy and motivation.");
+        }
+
     }
 
     /// <summary>
