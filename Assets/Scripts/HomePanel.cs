@@ -55,6 +55,8 @@ public class HomePanel : MonoBehaviour
     {
         this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
         this.ValuesPanel.UpdateEnergie(this.GameManager.energieMax / 2);
+
+        this.InfoPanel.UpdateTextLogContent("It's good to sleep and take a shower. \n" + " You are now ready for new adventures");
     }
 
     /// <summary>

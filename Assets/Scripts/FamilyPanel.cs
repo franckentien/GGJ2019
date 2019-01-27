@@ -64,6 +64,8 @@ public class FamilyPanel : MonoBehaviour
         this.ValuesPanel.UpdateMotivation(1);
         this.ValuesPanel.UpdateDysphoria(-1);
         this.ValuesPanel.UpdateWork(-1);
+
+        this.InfoPanel.UpdateTextLogContent("Your family love you.\n" + "Your are more motivated and you are less disphoric");
     }
 
     /// <summary>

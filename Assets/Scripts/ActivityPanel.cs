@@ -64,6 +64,8 @@ public class ActivityPanel : MonoBehaviour
         this.ValuesPanel.UpdateMotivation(2);
         this.ValuesPanel.UpdateDysphoria(-1);
         this.ValuesPanel.UpdateWork(-1);
+
+        this.InfoPanel.UpdateTextLogContent("Do some sport change your mind.\n" + "Your are tired but your have more motivation and less dysphoria");
     }
 
     /// <summary>

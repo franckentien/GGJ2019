@@ -64,6 +64,8 @@ public class SocialNetworkPanel : MonoBehaviour
         this.ValuesPanel.UpdateMotivation(1);
         this.ValuesPanel.UpdateDysphoria(1);
         this.ValuesPanel.UpdateWork(-1);
+
+        this.InfoPanel.UpdateTextLogContent("You pass time on web.\n" + "Your motivation increase but you see some post who hurt you.");
     }
 
     /// <summary>

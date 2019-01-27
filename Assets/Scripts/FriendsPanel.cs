@@ -60,11 +60,12 @@ public class FriendsPanel : MonoBehaviour
         this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
         this.valWorkSliderBeforeHover = this.GameManager.workDispo;
 
-        
         this.ValuesPanel.UpdateEnergie(-1);
         this.ValuesPanel.UpdateMotivation(3);
         this.ValuesPanel.UpdateDysphoria(-1);
         this.ValuesPanel.UpdateWork(-1);
+
+        this.InfoPanel.UpdateTextLogContent("It's good to pass time with friends.\n" + "You feel better");
     }
 
     /// <summary>
