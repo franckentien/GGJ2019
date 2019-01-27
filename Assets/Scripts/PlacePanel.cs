@@ -53,7 +53,8 @@ public class PlacePanel : MonoBehaviour
     /// </summary>
     void Start()
     {
-
+        this.SelfconfidenceSliderText.text = (this.GameManager.selfConfidence * 100).ToString();
+        this.SelfConfidenceSlider.value = this.GameManager.selfConfidence;
     }
 
     /// <summary>

@@ -78,6 +78,8 @@ public class ValuesPanel : MonoBehaviour
 
     public GameManager GameManager;
 
+    public PlacePanel PlacePanel;
+
     // Use this for initialization
     private void Start ()
     {
@@ -183,7 +185,9 @@ public class ValuesPanel : MonoBehaviour
 
         if (this.GameManager.motivationDispo > this.GameManager.motivationMax)
         {
+            this.PlacePanel.UpdateAlliesAmount(amount);
             this.GameManager.motivationDispo = this.GameManager.motivationMax;
+
         }
         else if (this.GameManager.motivationDispo < 0)
         {
@@ -250,6 +254,7 @@ public class ValuesPanel : MonoBehaviour
         }
         else if (this.GameManager.dysphoriaDispo < 0)
         {
+            this.PlacePanel.UpdateSliderAmount(0.05f);
             this.GameManager.dysphoriaDispo = 0;
         }
 
