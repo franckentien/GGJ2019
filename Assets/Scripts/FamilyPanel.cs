@@ -55,17 +55,31 @@ public class FamilyPanel : MonoBehaviour
     /// </summary>
     public void VisitFamilyButtonClick()
     {
-        this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
-        this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
-        this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
-        this.valWorkSliderBeforeHover = this.GameManager.workDispo;
+        if (this.valEnergieSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("You want to sleep, it's too risky to drive.\n" + "You maybe need to sleep a little before.");
+        }
+        if (this.valWorkSliderBeforeHover - 1 < 0)
+        {
+            this.InfoPanel.UpdateTextLogContent("You want to visit your family but you have to many work.\n" + "You may finish the important task before.");
+        }
+        else
+        {
+            this.valEnergieSliderBeforeHover = this.GameManager.energieDispo;
+            this.valMotivationSliderBeforeHover = this.GameManager.motivationDispo;
+            this.valDysphoriaSliderBeforeHover = this.GameManager.dysphoriaDispo;
+            this.valWorkSliderBeforeHover = this.GameManager.workDispo;
 
-        this.ValuesPanel.UpdateEnergie(-1);
-        this.ValuesPanel.UpdateMotivation(1);
-        this.ValuesPanel.UpdateDysphoria(-1);
-        this.ValuesPanel.UpdateWork(-1);
+            this.ValuesPanel.UpdateEnergie(-1);
+            this.ValuesPanel.UpdateMotivation(1);
+            this.ValuesPanel.UpdateDysphoria(-1);
+            this.ValuesPanel.UpdateWork(-1);
 
-        this.InfoPanel.UpdateTextLogContent("Your family love you.\n" + "Your are more motivated and you are less disphoric");
+            this.InfoPanel.UpdateTextLogContent("Your family love you.\n" + "Your are more motivated and you are less disphoric");
+        }
+
+
+
     }
 
     /// <summary>
